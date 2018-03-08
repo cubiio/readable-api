@@ -2,22 +2,16 @@
   "name": "readable-api",
   "version": "2.0.0",
   "description": "Improved API for Readable app",
-  "main": "./api/start.js",
+  "main": "./api/server.js",
   "scripts": {
-    "start": "nodemon ./api/start.js",
+    "start": "nodemon ./api/server.js",
     "test": "test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cubiio/readable-api.git"
   },
-  "keywords": [
-    "api",
-    "node",
-    "express",
-    "mongodb",
-    "readable"
-  ],
+  "keywords": ["api", "node", "express", "mongodb", "readable"],
   "author": "sam atkins",
   "license": "MIT",
   "bugs": {
