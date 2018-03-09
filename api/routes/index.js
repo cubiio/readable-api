@@ -9,7 +9,7 @@ router.get('/', baseController.helpPage);
 router.get(`/${apiVersion}`, baseController.helpPage);
 
 router.post(`/${apiVersion}/category`, categoryController.postCategory);
-
 router.get(`/${apiVersion}/categories`, categoryController.getCategories);
+router.put(`/${apiVersion}/category/:id`, categoryController.editCategory);
 
 module.exports = router;

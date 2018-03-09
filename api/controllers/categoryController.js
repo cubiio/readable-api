@@ -19,3 +19,16 @@ exports.getCategories = async (req, res) => {
     res.status(400).send('Bad Request');
   }
 };
+
+exports.editCategory = async (req, res) => {
+  try {
+    const category = await Category.findOneAndUpdate(
+      { _id: req.params.id },
+      req.body,
+      { new: true, runValidators: true }
+    ).exec();
+    res.status(200).json(category);
+  } catch (error) {
+    res.status(400).send('Bad Request');
+  }
+};
