@@ -19,6 +19,8 @@ router.get(`/${apiVersion}/posts`, postController.getPosts);
 router.post(`/${apiVersion}/posts`, postController.addPost);
 router.put(`/${apiVersion}/posts/:id`, postController.editPost);
 router.delete(`/${apiVersion}/posts/:id`, postController.deletePost);
+router.post(`/${apiVersion}/posts/vote/up/:id/`, postController.voteUpPost);
+router.post(`/${apiVersion}/posts/vote/down/:id/`, postController.voteDownPost);
 
 router.post(`/${apiVersion}/comments`, commentController.addComment);
 router.get(`/${apiVersion}/posts/:id/comments`, commentController.getComments);
