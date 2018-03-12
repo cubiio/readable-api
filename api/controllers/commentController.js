@@ -51,3 +51,19 @@ exports.voteDownComment = async (req, res) => {
     res.status(400).send('Bad Request');
   }
 };
+
+exports.editComment = async (req, res) => {
+  try {
+    const post = await Comment.findOneAndUpdate(
+      { _id: req.params.id },
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      }
+    ).exec();
+    res.status(200).json(post);
+  } catch (error) {
+    res.status(400).send('Bad Request');
+  }
+};
