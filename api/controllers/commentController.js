@@ -19,3 +19,35 @@ exports.getComments = async (req, res) => {
     res.status(400).send('Bad Request');
   }
 };
+
+exports.voteUpComment = async (req, res) => {
+  try {
+    const comment = await Comment.findOneAndUpdate(
+      { _id: req.params.id },
+      { $inc: { voteScore: +1 } },
+      {
+        new: true,
+        runValidators: true,
+      }
+    ).exec();
+    res.status(200).json(comment);
+  } catch (error) {
+    res.status(400).send('Bad Request');
+  }
+};
+
+exports.voteDownComment = async (req, res) => {
+  try {
+    const comment = await Comment.findOneAndUpdate(
+      { _id: req.params.id },
+      { $inc: { voteScore: -1 } },
+      {
+        new: true,
+        runValidators: true,
+      }
+    ).exec();
+    res.status(200).json(comment);
+  } catch (error) {
+    res.status(400).send('Bad Request');
+  }
+};

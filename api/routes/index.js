@@ -22,5 +22,13 @@ router.delete(`/${apiVersion}/posts/:id`, postController.deletePost);
 
 router.post(`/${apiVersion}/comments`, commentController.addComment);
 router.get(`/${apiVersion}/posts/:id/comments`, commentController.getComments);
+router.post(
+  `/${apiVersion}/comments/vote/up/:id/`,
+  commentController.voteUpComment
+);
+router.post(
+  `/${apiVersion}/comments/vote/down/:id/`,
+  commentController.voteDownComment
+);
 
 module.exports = router;
