@@ -23,6 +23,7 @@ router.delete(`/${apiVersion}/posts/:id`, postController.deletePost);
 router.post(`/${apiVersion}/comments`, commentController.addComment);
 router.get(`/${apiVersion}/posts/:id/comments`, commentController.getComments);
 router.put(`/${apiVersion}/comments/:id/`, commentController.editComment);
+router.delete(`/${apiVersion}/comments/:id/`, commentController.deleteComment);
 router.post(
   `/${apiVersion}/comments/vote/up/:id/`,
   commentController.voteUpComment

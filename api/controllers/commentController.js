@@ -67,3 +67,14 @@ exports.editComment = async (req, res) => {
     res.status(400).send('Bad Request');
   }
 };
+
+exports.deleteComment = async (req, res) => {
+  try {
+    const comment = await Comment.findOneAndRemove({
+      _id: req.params.id,
+    }).exec();
+    res.status(200).json(comment);
+  } catch (error) {
+    res.status(400).send('Bad Request');
+  }
+};
