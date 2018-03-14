@@ -13,7 +13,13 @@ exports.getPosts = async (req, res) => {
 
 exports.addPost = async (req, res) => {
   try {
-    const post = await new Post(req.body).save();
+    const updatedPost = {
+      ...req.body,
+      voteScore: 0,
+      commentCount: 0,
+      deleted: false,
+    };
+    const post = await new Post(updatedPost).save();
     res.status(200).json(post);
   } catch (error) {
     res.status(400).send('Bad Request');

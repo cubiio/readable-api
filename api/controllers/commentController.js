@@ -4,7 +4,12 @@ const Comment = mongoose.model('Comment');
 
 exports.addComment = async (req, res) => {
   try {
-    const comment = await new Comment(req.body).save();
+    const updatedComment = {
+      ...req.body,
+      deleted: false,
+      parentDeleted: false,
+    };
+    const comment = await new Comment(updatedComment).save();
     res.status(200).json(comment);
   } catch (error) {
     res.status(400).send('Bad Request');
