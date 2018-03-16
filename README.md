@@ -17,6 +17,7 @@ Development is in progress:
 * [x] Add API endpoint documentation
 * [ ] Unit tests
 * [ ] Set-up CI
+* [ ] Add graphQL?
 
 ## Table of Contents
 
@@ -60,7 +61,7 @@ fetch(url, {
 
 ##### API Endpoints
 
-API endpoint documentation is availble [here](https://documenter.getpostman.com/view/3266599/readable-api-v20/RVnZfHXN) via Postman Documentation.
+API endpoint documentation is available [here](https://documenter.getpostman.com/view/3266599/readable-api-v20/RVnZfHXN) via Postman Documentation.
 
 ### Tests
 
